@@ -18,5 +18,10 @@ namespace App5.Droid
         {
             
         }
+
+        public void GetDevices()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
