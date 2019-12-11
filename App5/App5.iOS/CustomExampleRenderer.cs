@@ -67,6 +67,7 @@ namespace App5.iOS
             var shapeLayer = new CAShapeLayer();
             shapeLayer.FillColor = UIColor.Yellow.CGColor;
             shapeLayer.StrokeColor = UIColor.Brown.CGColor;
+            shapeLayer.StrokeColor = UIColor.Brown.CGColor;
             //shapeLayer.LineWidth = 
 
 
