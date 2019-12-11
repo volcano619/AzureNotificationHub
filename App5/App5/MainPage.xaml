@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:control="clr-namespace:App5;assembly=App5"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App5.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <control:CustomExampleView HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="Center"/>
+        <control:RatingBar x:Name="customRattingBar" HorizontalOptions="Center"  ImageWidth="25" ImageHeight="25" Command="{Binding rattingBarCommand,Mode=TwoWay}" SelectedStarValue="{Binding SelectedValue,Mode=TwoWay}"   FillStarImage="star_selected" EmptyStarImage="star_outline"   />
+
+<Button Text="Click me" Clicked="Button_OnClicked" ></Button>
+        </StackLayout>
+
+</ContentPage>
