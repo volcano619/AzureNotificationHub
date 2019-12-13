@@ -29,7 +29,6 @@ namespace App5.Droid
             {
                 //Only used for debugging payloads sent from the Azure portal
                 SendNotification(message.Data.Values.First());
-
             }
         }
 
@@ -47,7 +46,7 @@ namespace App5.Droid
 
             var tags = new List<string>()
             {
-                "test"
+                Xamarin.Essentials.DeviceInfo.Manufacturer
             };
             var regID = hub.Register(token, tags.ToArray()).RegistrationId;
 
@@ -67,6 +66,7 @@ namespace App5.Droid
                 .SetContentText(messageBody)
                 .SetAutoCancel(true)
                 .SetShowWhen(false)
+                .SetVibrate(new long[]{2})
                 .SetContentIntent(pendingIntent);
 
             var notificationManager = NotificationManager.FromContext(this);
