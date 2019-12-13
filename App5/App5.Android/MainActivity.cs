@@ -14,7 +14,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace App5.Droid
 {
-    [Activity(Label = "App5", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "FixlyNotificationDemo", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         public const string TAG = "MainActivity";
@@ -30,6 +30,7 @@ namespace App5.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(savedInstanceState);
+            Toast.MakeText(this,Xamarin.Essentials.DeviceInfo.Manufacturer,ToastLength.Long).Show();
             if (Intent.Extras != null)
             {
                 foreach (var key in Intent.Extras.KeySet())
