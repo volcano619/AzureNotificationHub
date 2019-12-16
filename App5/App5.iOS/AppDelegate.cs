@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
 using UIKit;
 using WindowsAzure.Messaging;
@@ -99,7 +96,7 @@ namespace App5.iOS
                 // your "alert" object from the aps dictionary will be another NSDictionary.
                 // Basically the JSON gets dumped right into a NSDictionary,
                 // so keep that in mind.
-                if (aps.ContainsKey(new NSString("alert")))
+                if (aps != null && aps.ContainsKey(new NSString("alert")))
                     alert = ((NSString) aps[new NSString("alert")]).ToString();
 
                 //If this came from the ReceivedRemoteNotification while the app was running,
