@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace App5
 {
@@ -8,5 +9,7 @@ namespace App5
     {
         void CropImage();
         void GetDevices();
+
+        Task<string> SendRegistrationToken();
     }
 }

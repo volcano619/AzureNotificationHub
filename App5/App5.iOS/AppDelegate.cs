@@ -59,19 +59,20 @@ namespace App5.iOS
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
-            Hub = new SBNotificationHub(ListenConnectionString, NotificationHubName);
+            Xamarin.Forms.Application.Current.Properties["token"] = deviceToken;
+            //Hub = new SBNotificationHub(ListenConnectionString, NotificationHubName);
 
-            Hub.UnregisterAll(deviceToken, async (error) => {
-                if (error != null)
-                {
-                    System.Diagnostics.Debug.WriteLine("Error calling Unregister: {0}", error.ToString());
-                    return;
-                }
+            //Hub.UnregisterAll(deviceToken, async (error) => {
+            //    if (error != null)
+            //    {
+            //        System.Diagnostics.Debug.WriteLine("Error calling Unregister: {0}", error.ToString());
+            //        return;
+            //    }
 
-                NSSet tags = null; // create tags if you want
-                tags = new NSSet(Xamarin.Essentials.DeviceInfo.Manufacturer);
-                await Hub.RegisterNativeAsync(deviceToken, tags);
-            });
+            //    NSSet tags = null; // create tags if you want
+            //    tags = new NSSet(Xamarin.Essentials.DeviceInfo.Manufacturer);
+            //    await Hub.RegisterNativeAsync(deviceToken, tags);
+            //});
         }
 
         public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)

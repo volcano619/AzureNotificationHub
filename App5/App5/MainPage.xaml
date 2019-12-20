@@ -15,8 +15,10 @@
             <control:CustomExampleView HorizontalOptions="CenterAndExpand"
                                        VerticalOptions="Center"/>
         <control:RatingBar x:Name="customRattingBar" HorizontalOptions="Center"  ImageWidth="25" ImageHeight="25" Command="{Binding rattingBarCommand,Mode=TwoWay}" SelectedStarValue="{Binding SelectedValue,Mode=TwoWay}"   FillStarImage="star_selected" EmptyStarImage="star_outline"   />
-
-<Button Text="Click me" Clicked="Button_OnClicked" ></Button>
+        <Button VerticalOptions="Start" HorizontalOptions="Center" StyleId="Register"  Text="Register" Clicked="Button_OnClicked2" ></Button>
+        <Label x:Name="RegId" ></Label>
+        <Button VerticalOptions="Start" HorizontalOptions="Center" StyleId="Delete"  Text="UnRegister" Clicked="Button_OnClicked2" ></Button>
+        <Button Text="Click me" Clicked="Button_OnClicked" ></Button>
         </StackLayout>
 
 </ContentPage>

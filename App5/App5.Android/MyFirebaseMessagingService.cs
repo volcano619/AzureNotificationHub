@@ -6,6 +6,7 @@ using Android.Support.V4.App;
 using WindowsAzure.Messaging;
 using Android.App;
 using Android.Content;
+using Xamarin.Forms;
 
 namespace App5.Droid
 {
@@ -35,7 +36,8 @@ namespace App5.Droid
         public override void OnNewToken(string token)
         {
             Log.Debug(TAG, "FCM token: " + token);
-            SendRegistrationToServer(token);
+            Xamarin.Forms.Application.Current.Properties["token"] = token;
+            //SendRegistrationToServer(token);
         }
 
         void SendRegistrationToServer(string token)
