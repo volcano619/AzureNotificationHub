@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.IO;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using App5.Annotations;
@@ -97,6 +98,24 @@ namespace App5
             //        });
             //    }
             //}.Show(this);
+        }
+
+        private async void Button_OnClicked2(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                if (button.StyleId.Equals("Register"))
+                {
+                    var opt = Application.Current.Properties["token"];
+                    RegId.Text = await DependencyService.Get<ICrop>().SendRegistrationToken();
+                }
+                else
+                {
+                   var opt = await new HttpClient().PostAsync(
+                        "http://fixlynotificationdemo.azurewebsites.net/Home/DeleteRegistration?id=" +
+                        Application.Current.Properties["REGID"], null);
+                }
+            }
         }
     }
 }
